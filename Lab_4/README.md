@@ -1,1 +1,1 @@
-# Lab_RoboticsEste es la practica 4
+# Laboratory 4: Working with images

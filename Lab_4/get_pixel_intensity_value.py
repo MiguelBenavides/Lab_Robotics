@@ -1,7 +1,12 @@
 """
 	get_pixel_intensity_value.py
 
-	This code...
+	This code reads an image on colour, then converts it to a 
+	greyscale image. It retrieves the pixel intensity at the row 100
+	column 100 by either image array method and item() method. Then, 
+	it prints the information for both colour and greyscale image, 
+	and modifies the intensity of that given pixel to 0, 0, 0, meaning
+	black. It gives you the option to modify it bia array or item() methods. 
 
 	author: Miguel Benavides
 	date created: 28 February 2018

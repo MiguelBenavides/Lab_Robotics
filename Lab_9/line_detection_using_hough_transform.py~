@@ -102,7 +102,7 @@ def run_pipeline(img_name):
     img_colour_with_lines = img_colour_rgb.copy()
     for line in hough_lines:
         for x1, y1, x2, y2 in line:
-            cv2.line(img_colour_with_lines, (x1, y1), (x2, y2), (255,0,0), 3)
+            cv2.line(img_colour_with_lines, (x1, y1), (x2, y2), (0,0,255), 3)
 
 	# visualise output video
     cv2.namedWindow('Line detection', cv2.WINDOW_NORMAL)

@@ -213,12 +213,11 @@ while(True):
                 roismall = np.float32(roismall)
                 retval, results, neigh_resp, dists = model.findNearest(roismall, k = 1)
                 string = str(int((results[0][0])))
-                if string != '7':
-                    print (string)
-                    cv2.putText(out,string,(x,y+h),0,1,(0,255,0))
-                    cv2.imshow('im',im)
-                    cv2.imshow('out',out)
-                    cv2.waitKey(0)
+                print (string)
+                cv2.putText(out,string,(x,y+h),0,1,(0,255,0))
+                cv2.imshow('im',im)
+                cv2.imshow('out',out)
+                cv2.waitKey(0)
 
     # wait for the user to press 'q' to close the window
     if cv2.waitKey(1) & 0xFF == ord('q'):

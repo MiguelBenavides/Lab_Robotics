@@ -213,7 +213,7 @@ while(True):
                 roismall = np.float32(roismall)
                 retval, results, neigh_resp, dists = model.findNearest(roismall, k = 1)
                 string = str(int((results[0][0])))
-                if string != 7:
+                if string != '7':
                     print (string)
                     cv2.putText(out,string,(x,y+h),0,1,(0,255,0))
                     cv2.imshow('im',im)

@@ -205,7 +205,8 @@ while(True):
     for cnt in contours:
         if cv2.contourArea(cnt)>50:
             [x,y,w,h] = cv2.boundingRect(cnt)
-            if  h>28:
+            cuadrado = h - w
+            if  h > 28 and cuadrado > 10:
                 cv2.rectangle(im,(x,y),(x+w,y+h),(0,255,0),2)
                 roi = thresh[y:y+h,x:x+w]
                 roismall = cv2.resize(roi,(10,10))
@@ -213,12 +214,11 @@ while(True):
                 roismall = np.float32(roismall)
                 retval, results, neigh_resp, dists = model.findNearest(roismall, k = 1)
                 string = str(int((results[0][0])))
-                if string != '7':
-                    print (string)
-                    cv2.putText(out,string,(x,y+h),0,1,(0,255,0))
-                    cv2.imshow('im',im)
-                    cv2.imshow('out',out)
-                    cv2.waitKey(0)
+                print (string)
+                cv2.putText(out,string,(x,y+h),0,1,(0,255,0))
+                cv2.imshow('im',im)
+                cv2.imshow('out',out)
+                cv2.waitKey(0)
 
     # wait for the user to press 'q' to close the window
     if cv2.waitKey(1) & 0xFF == ord('q'):

@@ -205,7 +205,8 @@ while(True):
     for cnt in contours:
         if cv2.contourArea(cnt)>50:
             [x,y,w,h] = cv2.boundingRect(cnt)
-            if  h>28:
+            cuadrado = h - w
+            if  h > 28 and cuadrado > 10:
                 cv2.rectangle(im,(x,y),(x+w,y+h),(0,255,0),2)
                 roi = thresh[y:y+h,x:x+w]
                 roismall = cv2.resize(roi,(10,10))
